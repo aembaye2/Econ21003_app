@@ -46,8 +46,9 @@ def process_canvas(default_drawing_data):
 
     # Specify canvas parameters in application
     drawing_mode = st.sidebar.selectbox(
-        "Drawing tool:", (   # "freedraw",
+        "Drawing tool:", (
             "line",
+            "freedraw",
             "coordinate",
             "curve",
             "singlearrowhead",
@@ -244,6 +245,7 @@ def make_ss_user_inputs(questions, default_vals):
     thequestion = f"Question {st.session_state.current_question_index+1}: {question['label']}"
     # Use st.radio to display options as radio buttons
     # st.write(thequestion)
+    st.write(thequestion)
     if question["qtype"] == "mc_quest":
         previous_option_value = default_vals.get(question_key, "")
         # Initialize a variable to hold the index of the previously selected option

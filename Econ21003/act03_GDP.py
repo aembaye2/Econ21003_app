@@ -21,9 +21,9 @@ from collections import OrderedDict
 from helper_fns import start_assessment, next_question, previous_question, finish_assessment, serialize_data, make_ss_user_inputs, make_html_template
 
 # define things that are unique to the assignment/activity
-pagetitle = pageheader = "Quiz 1"
-act_name = "quiz_01"
-questions_jsonfile = 'questions_' + act_name + '.json'
+pagetitle = pageheader = "Activity 3"
+act_name = "act03"
+questions_jsonfile = 'question_set4' + act_name + '.json'
 dbtable_file = "db_" + act_name + ".json"
 workingdir = st.session_state.wkd
 
@@ -33,7 +33,7 @@ if not os.path.exists(workingdir):
 
 # Construct the full path to the database file
 full_path_db = os.path.join(workingdir, dbtable_file)
-st.write(f"Your work is saved in: {full_path_db}")
+# st.write(f"Your work will be saved in: {full_path_db}")
 
 # Load the questions from the JSON file
 try:
@@ -102,9 +102,9 @@ if st.session_state.quiz_finished:
     if save_button:
         with open(full_path_db, "w") as json_file:
             json.dump(serializable_user_inputs, json_file)
-            st.write(
-                f"User input saved as .json file in the file full path: {full_path_db} or {json_file}")
-
+            # st.write(
+            #     f"User input saved as .json file in the file full path: {full_path_db} or {json_file}")
+            st.write(f"Your work will be saved in: {full_path_db}")
     submit = st.button(
         "Generate PDF", key="generate_button")
 

@@ -22,8 +22,8 @@ from helper_fns import start_assessment, next_question, previous_question, finis
 
 # define things that are unique to the assignment/activity
 pagetitle = pageheader = "Activity 1"
-act_name = "quiz_01"
-questions_jsonfile = 'questions_' + act_name + '.json'
+act_name = "act01"
+questions_jsonfile = 'question_set4' + act_name + '.json'
 dbtable_file = "db_" + act_name + ".json"
 workingdir = st.session_state.wkd
 

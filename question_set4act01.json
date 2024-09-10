@@ -17,10 +17,6 @@
     "label": "This is  an example of multiple line text entering question"
   },
   {
-    "qtype": "upload_quest",
-    "label": "This is  an example of image or csv file upload question"
-  },
-  {
     "qtype": "drawing_quest",
     "label": "This is  an example of canvas drawing question"
   }
