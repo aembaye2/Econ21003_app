@@ -33,7 +33,7 @@ if not os.path.exists(workingdir):
 
 # Construct the full path to the database file
 full_path_db = os.path.join(workingdir, dbtable_file)
-st.write(full_path_db)
+st.write(f"Your work is saved in: {full_path_db}")
 
 # Load the questions from the JSON file
 try:

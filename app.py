@@ -28,13 +28,13 @@ def login():
     # course is take from this selection; course can be replaced by password
     course = st.selectbox("Choose your Course", COURSES)
     lastname = st.text_input("Enter your last name")
-    # wkd = st.text_input(
-    #     r"Please your enter your working directory so that your work is saved and uploaded when you comeback to the same assessment. mine is for example, C:\\Users\\aembaye\\Documents")
+    wkd = st.text_input(
+        r"Please your enter your working directory so that your work is saved and uploaded when you comeback to the same assessment. mine is for example, C:\\Users\\aembaye\\Documents")
     if st.button("Log in"):
         st.session_state.course = course
         st.session_state.username = lastname  # "lastname"
-        # st.session_state.wkd = wkd
-        st.session_state.wkd = "C:/Users/aembaye/Documents"
+        st.session_state.wkd = wkd
+        # st.session_state.wkd = "C:/Users/aembaye/Documents"
 
         st.rerun()
 
@@ -53,9 +53,9 @@ logout_page = st.Page(logout, title="Log out", icon=":material/logout:")
 # this is just an example of page outside of folder
 settings = st.Page("settings.py", title="Settings", icon=":material/settings:")
 
-quiz_01 = st.Page(
-    "Econ21003/quiz_01.py",
-    title="Quiz 01",
+act01 = st.Page(
+    "Econ21003/act01.py",
+    title="Activity 01: Comp Adv",
     icon=":material/healing:",
     default=(course == "Econ21003"),
 )
@@ -64,14 +64,19 @@ quiz_01 = st.Page(
 #     "Econ21003/quiz_02.py", title="Quiz 02", icon=":material/handyman:"
 # )
 
+act03_GDP = st.Page(
+    "Econ21003/act03_GDP.py",
+    title="Activity 03: GDP",
+    icon=":material/healing:"
+)
 
 account_pages = [logout_page, settings]
-Econ21003_pages = [quiz_01]  # , quiz_02]
+Econ21003_pages = [act01, act03_GDP]  # , quiz_02]
 # the list here must be unique than the above
 # Econ3333_pages = [quiz_01x, quiz_02x]
 
 
-st.title("Quiz XYZ")
+st.title("Econ 21003: Online Activity")
 
 st.logo("images/horizontal_blue.png",  icon_image="images/icon_blue.png")
 
@@ -79,8 +84,6 @@ page_dict = {}
 
 if st.session_state.course in ["Econ21003"]:  # ["Requester", "Admin"]
     page_dict["Econ21003"] = Econ21003_pages
-# if st.session_state.course in ["Econ3333"]:  # ["Econ21003", "Admin"]
-#     page_dict["Econ3333"] = Econ3333_pages
 
 if len(page_dict) > 0:
     pg = st.navigation({"Account": account_pages} | page_dict)
