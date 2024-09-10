@@ -6,6 +6,14 @@
 import hmac
 import streamlit as st
 # from helper_fns import check_password
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
 
 if "course" not in st.session_state:
     st.session_state.course = None
