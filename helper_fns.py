@@ -309,7 +309,7 @@ def make_html_template(questions):
             questions) else "Label Unknown"
         question_number = index + 1  # Human-friendly question numbering
         if qtype == "mc_quest":
-            template += f"""<h6> Q# {question_number}: {question_label}</h6><div style="width:100px; height:20px; padding:20px; text-align:left; border: 1px solid #787878">
+            template += f"""<h6> Q# {question_number}: {question_label}</h6><div style="width:800px; height:20px; padding:20px; text-align:left; border: 1px solid #787878">
         {value}
     </div>\n <br> <br>  """
         elif qtype == "float_num":

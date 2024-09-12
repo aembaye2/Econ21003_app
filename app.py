@@ -36,12 +36,12 @@ def login():
     # course is take from this selection; course can be replaced by password
     course = st.selectbox("Choose your Course", COURSES)
     lastname = st.text_input("Enter your last name")
-    wkd = st.text_input(
-        r"Please your enter your working directory so that your work is saved and uploaded when you comeback to the same assessment. mine is for example, C:\\Users\\aembaye\\Documents")
+    # wkd = st.text_input( r"Please your enter your working directory so that your work is saved and uploaded when you comeback to the same assessment. mine is for example, C:\\Users\\aembaye\\Documents")
     if st.button("Log in"):
         st.session_state.course = course
         st.session_state.username = lastname  # "lastname"
-        st.session_state.wkd = wkd
+        # st.session_state.wkd = wkd
+        st.session_state.wkd = ''
         # st.session_state.wkd = "C:/Users/aembaye/Documents"
 
         st.rerun()
@@ -65,7 +65,6 @@ act01 = st.Page(
     "Econ21003/act01.py",
     title="Activity 01: Comp Adv",
     icon=":material/healing:",
-    default=(course == "Econ21003"),
 )
 
 # quiz_02 = st.Page(
@@ -75,7 +74,8 @@ act01 = st.Page(
 act03_GDP = st.Page(
     "Econ21003/act03_GDP.py",
     title="Activity 03: GDP",
-    icon=":material/healing:"
+    icon=":material/healing:",
+    default=(course == "Econ21003"),
 )
 
 account_pages = [logout_page, settings]
