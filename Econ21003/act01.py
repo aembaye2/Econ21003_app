@@ -35,7 +35,7 @@ current_date = datetime.now()
 
 # Check if the due date has passed
 if current_date > due_date:
-    st.error("This has been done in class with paper and pencil.")
+    st.error("Past due.")
 else:
     # Ensure the working directory exists
     if not os.path.exists(workingdir):
