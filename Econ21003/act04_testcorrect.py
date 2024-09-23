@@ -42,8 +42,8 @@ else:
         st.info("Coming soon.")
     else:
         # define things that are unique to the assignment/activity
-        pagetitle = pageheader = "Activity 3"
-        act_name = "act03"
+        pagetitle = pageheader = "Activity 4"
+        act_name = "act04"
         questions_jsonfile = 'question_set4' + act_name + '.json'
         dbtable_file = "db_" + act_name + ".json"
         workingdir = st.session_state.wkd
