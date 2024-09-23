@@ -10,7 +10,7 @@ from PIL import Image, UnidentifiedImageError
 import io
 from io import BytesIO
 import base64
-from datetime import date
+from datetime import datetime, timedelta
 import pdfkit
 from jinja2 import Environment, PackageLoader, select_autoescape, FileSystemLoader
 import time
@@ -21,14 +21,13 @@ import sqlalchemy.exc
 from collections import OrderedDict
 from helper_fns import start_assessment, next_question, previous_question, finish_assessment, serialize_data, make_ss_user_inputs, make_html_template
 
-from datetime import datetime, timedelta
 
 due_date = datetime(2024, 9, 26, 23, 0)  # Adding hours to the due date
 
 # Set the release date to be tomorrow at 11:30 am
 release_date = (datetime.now() + timedelta(days=1)
                 ).replace(hour=11, minute=30, second=0, microsecond=0)
-release_date = datetime(2024, 9, 22, 0)
+# release_date = datetime(2024, 9, 22, 0)
 # st.write(f"Release date: {release_date}")
 
 # Get the current date
@@ -74,7 +73,7 @@ else:
                 default_vals = json.load(json_file)
         except FileNotFoundError:
             st.warning(
-                f"Database file {full_path_db} not found. Setting default values to an empty dictionary.")
+                f"Database file {full_path_db} not found. New one created!")
             default_vals = {}
         except Exception as e:
             st.error(f"An error occurred while loading default values: {e}")

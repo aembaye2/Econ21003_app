@@ -15,6 +15,8 @@ hide_st_style = """
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
+st.title("Econ 21003: Online Activity")
+
 if "course" not in st.session_state:
     st.session_state.course = None
 
@@ -93,7 +95,7 @@ Econ21003_pages = [act01, act03_GDP, act04_testcorrections]  # , quiz_02]
 # Econ3333_pages = [quiz_01x, quiz_02x]
 
 
-st.title("Econ 21003: Online Activity")
+# st.title("Econ 21003: Online Activity")
 
 st.logo("images/horizontal_blue.png",  icon_image="images/icon_blue.png")
 
