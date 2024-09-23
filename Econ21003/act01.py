@@ -28,7 +28,8 @@ dbtable_file = "db_" + act_name + ".json"
 workingdir = st.session_state.wkd
 
 # Define the due date (year, month, day)
-due_date = datetime(2024, 8, 31)
+# due_date = datetime(2024, 8, 31)
+due_date = datetime(2024, 9, 30)
 
 # Get the current date
 current_date = datetime.now()

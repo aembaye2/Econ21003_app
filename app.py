@@ -30,18 +30,18 @@ COURSES = [None, "Econ21003"]  # , "Econ3333"]
 # if not check_password():
 #     st.stop()
 
-
 def login():
     st.header("Log in")
     # course is take from this selection; course can be replaced by password
     course = st.selectbox("Choose your Course", COURSES)
     lastname = st.text_input("Enter your last name")
-    # wkd = st.text_input( r"Please your enter your working directory so that your work is saved and uploaded when you comeback to the same assessment. mine is for example, C:\\Users\\aembaye\\Documents")
+    wkd = st.text_input(
+        r"Please enter your working directory so that your work is saved and uploaded when you comeback to the same assessment. In my PC with windows OS I use backslash, C:\\Users\\aembaye\\Documents")
     if st.button("Log in"):
         st.session_state.course = course
         st.session_state.username = lastname  # "lastname"
-        # st.session_state.wkd = wkd
-        st.session_state.wkd = ''
+        st.session_state.wkd = wkd
+        # st.session_state.wkd = ''
         # st.session_state.wkd = "C:/Users/aembaye/Documents"
 
         st.rerun()
@@ -75,11 +75,19 @@ act03_GDP = st.Page(
     "Econ21003/act03_GDP.py",
     title="Activity 03: GDP",
     icon=":material/healing:",
+    # default=(course == "Econ21003"),
+)
+
+act04_testcorrections = st.Page(
+    "Econ21003/act04_testcorr.py",
+    title="Test Corrections Assignment",
+    icon=":material/healing:",
     default=(course == "Econ21003"),
 )
 
 account_pages = [logout_page, settings]
-Econ21003_pages = [act01, act03_GDP]  # , quiz_02]
+
+Econ21003_pages = [act01, act03_GDP, act04_testcorrections]  # , quiz_02]
 # the list here must be unique than the above
 # Econ3333_pages = [quiz_01x, quiz_02x]
 
