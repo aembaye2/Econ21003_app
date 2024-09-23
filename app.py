@@ -79,8 +79,9 @@ act03_GDP = st.Page(
 )
 
 act04_testcorrections = st.Page(
-    "Econ21003/act04_testcorr.py",
-    title="Test Corrections Assignment",
+    "Econ21003/act04_testcorrect.py",  # exactly as it is in the folder Econ 21003
+    # Test Corrections Assignment",  # This is what apears to the user
+    title="Activity 04:xx",
     icon=":material/healing:",
     default=(course == "Econ21003"),
 )
