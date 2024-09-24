@@ -38,7 +38,7 @@ def login():
     course = st.selectbox("Choose your Course", COURSES)
     lastname = st.text_input("Enter your last name")
     wkd = st.text_input(
-        r"Please enter your working directory so that your work is saved and uploaded when you comeback to the same assessment. In my PC with windows OS I use backslash, C:\\Users\\aembaye\\Documents")
+        r"Please enter your working directory so that your work is saved and uploaded when you comeback to the same assessment. In my PC with windows OS, on of my folders is (change this to yours!), C:\\Users\\myusername\\Documents")
     if st.button("Log in"):
         st.session_state.course = course
         st.session_state.username = lastname  # "lastname"
