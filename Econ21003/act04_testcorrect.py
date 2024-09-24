@@ -25,9 +25,9 @@ from helper_fns import start_assessment, next_question, previous_question, finis
 due_date = datetime(2024, 9, 26, 23, 0)  # Adding hours to the due date
 
 # Set the release date to be tomorrow at 11:30 am
-release_date = (datetime.now() + timedelta(days=1)
-                ).replace(hour=11, minute=30, second=0, microsecond=0)
-# release_date = datetime(2024, 9, 22, 0)
+# release_date = (datetime.now() + timedelta(days=0)
+#                 ).replace(hour=10, minute=30, second=0, microsecond=0)
+release_date = datetime(2024, 9, 24, 11, 45)
 # st.write(f"Release date: {release_date}")
 
 # Get the current date

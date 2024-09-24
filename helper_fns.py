@@ -265,7 +265,7 @@ def make_ss_user_inputs(questions, default_vals):
             label=thequestion, value=default_vals.get(question_key, ""),  label_visibility="hidden", key=question_key)
     elif question["qtype"] == "manyline_text":
         st.session_state.user_inputs[question_key] = st.text_area(label=thequestion,
-                                                                  value=default_vals.get(question_key, ""), label_visibility="hidden",  key=question_key)
+                                                                  value=default_vals.get(question_key, ""), height=200, max_chars=600, label_visibility="hidden",  key=question_key)
     elif question["qtype"] == "upload_quest":
         default_image_data = default_vals.get(question_key, "")
         # st.write(default_image_data)
@@ -321,7 +321,7 @@ def make_html_template(questions):
         {value}
         </div>\n  <br> <br> """
         elif qtype == "manyline_text":
-            template += f"""<h6> Q# {question_number}: {question_label}</h6><div style="width:800px; height:200px; padding:20px; text-align:left; border: 1px solid #787878">    {value}</div >\n  <br> <br> """
+            template += f"""<h6> Q# {question_number}: {question_label}</h6><div style="width:800px; height:150px; padding:20px; text-align:left; border: 1px solid #787878">    {value}</div >\n  <br> <br> """
         elif qtype == "upload_quest":
             processed_value = st.session_state.inputs4template[f"q{index+1}"]
             template += f"""<h6> Q# {question_number}: {question_label}</h6><div style="width:500px; height:200px; padding:20px; text-align:center; border: 1px solid #787878">
